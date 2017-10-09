@@ -22,15 +22,6 @@ module.exports = {
   css: [
     'swiper/dist/css/swiper.min.css'
   ],
-
-  // this seems to work
-  // css: [
-  //   'swiper/dist/css/swiper.min.css'    
-  // ],
-  // this gives document-error
-  // modules: [
-  //   'modules.js'
-  // ],
   /*
   ** Customize the progress bar color
   */
@@ -39,11 +30,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Import Vendors
-    */
-    // this gives document-error
-    // vendor: ['swiper'],
     /*
     ** Run ESLint on save
     */

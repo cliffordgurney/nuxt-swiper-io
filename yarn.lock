@@ -5152,9 +5152,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-awesome-swiper@^2.6.5:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-2.6.5.tgz#ed1777c5f81e0d6be301e4de11e477867a2450f9"
+vue-awesome-swiper@^2.6.7:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-2.6.7.tgz#23b12cf107503305c267df3c7c2903fb39896cd0"
   dependencies:
     swiper "^3.4.2"
 

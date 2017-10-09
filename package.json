@@ -15,7 +15,7 @@
   "dependencies": {
     "nuxt": "^1.0.0-rc11",
     "swiper": "^4.0.0",
-    "vue-awesome-swiper": "^2.6.5"
+    "vue-awesome-swiper": "^2.6.7"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

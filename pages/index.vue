@@ -1,20 +1,5 @@
 <template>
-    <section class="container">
-        <!-- <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
-                    <div class="swiper-slide">Slide 7</div>
-                    <div class="swiper-slide">Slide 8</div>
-                    <div class="swiper-slide">Slide 9</div>
-                    <div class="swiper-slide">Slide 10</div>
-                </div>
-            </div> -->
-
+    <section class="container">,
         <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="banner in banners" :key="banner">
@@ -27,25 +12,7 @@
 </template>
 
 <script>
-// Not working
-// import Swiper from 'swiper'
-// not working
-// if (process.browser) {
-//     var Swiper = require('swiper')
-// }
-
-// SSR 2nd attempt
-// import Vue from 'vue'
-// if (process.browser) {
-//     const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
-//     Vue.use(VueAwesomeSwiper)
-// }
-
 export default {
-    // mounted () {
-    //     /* eslint-disable no-unused-vars, no-undef */
-    //     var newSwiper = new Swiper('.swiper-container')
-    // }
     data () {
         return {
             banners: [
@@ -71,14 +38,14 @@ export default {
     },
     mounted () {
         console.log('app init', this)
-        setTimeout(() => {
-            // this.banners.push('/5.jpg')
-            console.log('banners update')
-        }, 3000)
+        // setTimeout(() => {
+        //     this.banners.push('/5.jpg')
+        //     console.log('banners update')
+        // }, 3000)
         console.log(
             'This is current swiper instance object', this.mySwiper,
             'I will slideTo banners 3')
-        // this.mySwiper.slideTo(3)
+        this.mySwiper.slideTo(3)
     }
 }
 </script>
