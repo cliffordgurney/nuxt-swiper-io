@@ -1,18 +1,27 @@
 <template>
     <section class="container">
-        <div class="swiper-container">
+        <!-- <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 10</div>
+                </div>
+            </div> -->
+
+        <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-                <div class="swiper-slide">Slide 10</div>
+                <div class="swiper-slide" v-for="banner in banners" :key="banner">
+                    <img :src="banner">
+                </div>
             </div>
+            <div class="swiper-pagination swiper-pagination-bullets"></div>
         </div>
     </section>
 </template>
@@ -25,15 +34,71 @@
 //     var Swiper = require('swiper')
 // }
 
+// SSR 2nd attempt
+// import Vue from 'vue'
+// if (process.browser) {
+//     const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
+//     Vue.use(VueAwesomeSwiper)
+// }
+
 export default {
+    // mounted () {
+    //     /* eslint-disable no-unused-vars, no-undef */
+    //     var newSwiper = new Swiper('.swiper-container')
+    // }
+    data () {
+        return {
+            banners: [
+                'http://placehold.it/300x300',
+                'http://placehold.it/300x300',
+                'http://placehold.it/300x300'
+            ],
+            swiperOption: {
+                autoplay: 5000,
+                initialSlide: 1,
+                direction: 'horizontal',
+                loop: true,
+                pagination: '.swiper-pagination',
+                paginationElement: 'li',
+                onSlideChangeEnd: swiper => {
+                    console.log('onSlideChangeEnd', swiper.realIndex)
+                },
+                onTap: swiper => {
+                    console.log('onTap', swiper.realIndex)
+                }
+            }
+        }
+    },
     mounted () {
-        /* eslint-disable no-unused-vars, no-undef */
-        var newSwiper = new Swiper('.swiper-container')
+        console.log('app init', this)
+        setTimeout(() => {
+            // this.banners.push('/5.jpg')
+            console.log('banners update')
+        }, 3000)
+        console.log(
+            'This is current swiper instance object', this.mySwiper,
+            'I will slideTo banners 3')
+        // this.mySwiper.slideTo(3)
     }
 }
 </script>
 
 <style>
+.my-swiper {
+    height: 300px;
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 html,
 body {
     position: relative;

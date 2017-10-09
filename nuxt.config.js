@@ -13,14 +13,24 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  // this seems to work
+  /*
+  ** Vue Awesome Swiper Integration
+  */
+  plugins: [
+    { src: '~/plugins/nuxt-swiper-plugin.js', ssr: false },
+  ],
   css: [
-    'swiper/dist/css/swiper.min.css'    
+    'swiper/dist/css/swiper.min.css'
   ],
+
+  // this seems to work
+  // css: [
+  //   'swiper/dist/css/swiper.min.css'    
+  // ],
   // this gives document-error
-  modules: [
-    'modules.js'
-  ],
+  // modules: [
+  //   'modules.js'
+  // ],
   /*
   ** Customize the progress bar color
   */
